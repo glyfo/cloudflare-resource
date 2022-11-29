@@ -11,7 +11,36 @@ This page review Cloudflare Resource and how use into the Cloudflare Workers
 
 #### Workers KV  
 
-Cloudflare’s key-value storage solution.
+Workers KV is a global, low-latency, key-value data store. It stores data in a small number of centralized data centers, then caches that data in Cloudflare’s data centers after access. 
+
+https://developers.cloudflare.com/workers/learning/how-kv-works/
+
+##### 1- Read KV Typescript
+
+```code
+interface Env {
+  TODO_LIST: KVNamespace;
+}
+export const onRequest: PagesFunction<Env> = async (context) => {
+  const task = await context.env.TODO_LIST.get("Task:123");
+  return new Response(task);
+}
+
+```
+
+##### 2- Write KV
+
+
+```code
+interface Env {
+  TODO_LIST: KVNamespace;
+}
+export const onRequest: PagesFunction<Env> = async (context) => {
+  const result = await context.env.TODO_LIST.put("data", JSON.stringify(defaultData))
+  return new Response(result);
+}
+
+```
 
 #### Durable Object  
 

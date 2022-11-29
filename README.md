@@ -2,7 +2,7 @@
 
 This page review Cloudflare Resource and how use into the Cloudflare Workers
 
-###  Resource 
+###  Detail Resource 
 
 + Workers KV 
 + Durable Object 
@@ -55,7 +55,7 @@ Cloudflare’s R2 storage solution.
 Cloudflare’s D1 storage solution. 
 
 
-Resource 
+### Resource 
 
 https://github.com/cloudflare/wrangler2
 https://developers.cloudflare.com/pages/platform/functions/bindings/
